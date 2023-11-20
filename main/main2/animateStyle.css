@@ -1,0 +1,132 @@
+:root {
+    --animationTime: 0.3s;
+    --carouselAnimationTime: 0.4s;
+}
+
+* {
+    transition-property: all;
+    transition-duration: var(--animationTime);
+}
+
+.header__tab {
+    transition-property: opacity;
+    transition-duration: var(--animationTime);
+}
+
+.header__tab:after {
+    transition-property: width;
+    transition-duration: var(--animationTime);
+    transition-timing-function: linear;
+}
+
+.header__tab[state="1"]::after {
+    left: 0;
+    width: 100%;
+}
+
+#burger-btn {
+    transition-property: transform;
+    transition-duration: var(--animationTime);
+}
+
+#burger-btn[state="0"] {
+    transform: rotate(0);
+}
+
+#burger-btn[state="1"] {
+    transform: rotate(-90deg);
+}
+
+#blackout {
+    transition-property: opacity;
+    transition-duration: var(--animationTime);
+    transition-timing-function: linear;
+}
+
+#blackout[state="0"] {
+    opacity: 0;
+    z-index: -1;
+}
+
+#blackout[state="1"] {
+    opacity: 0.3;
+    z-index: 1;
+}
+
+#burger-menu {
+    transition-property: all;
+    transition-duration: var(--animationTime);
+}
+
+#burger-menu[state="0"] {
+    top: 50px;
+    right: 20px;
+    width: 30px;
+    height: 22px;
+    display: flex;
+    background-color: transparent;
+}
+
+#burger-menu[state="1"] {
+    top: 0;
+    right: 0;
+    width: 320px;
+    height: 100vh;
+    display: flex;
+    background-color: #292929;
+}
+
+#burger-menu__list>li>a {
+    transition-property: opacity;
+}
+
+#burger-menu__list[state="0"]>li>a {
+    opacity: 0;
+    display: none;
+}
+
+#burger-menu__list[state="1"]>li>a {
+    transition-duration: var(--animationTime);
+    transition-delay: var(--animationTime);
+    opacity: 0.75;
+}
+
+@media (min-width: 1024px) {
+    #burger-menu__list>li>a:hover,
+    #burger-menu__list>li>a:focus {
+        transition-delay: 0;
+        opacity: 1;
+    }
+}
+
+.header__wrapper::before {
+    transition-property: opacity;
+    transition-duration: var(--animationTime);
+    transition-timing-function: ease-out;
+}
+
+.header__wrapper[state="0"]::before {
+    opacity: 0;
+}
+
+.header__wrapper[state="1"]::before {
+    opacity: 1;
+}
+
+.pet-pop-up {
+    transition-property: transform;
+    transition-duration: var(--animationTime);
+    transition-timing-function: ease;
+}
+
+.pet-pop-up[state="0"] {
+    transform: scale(0);
+}
+
+.pet-pop-up[state="1"] {
+    transform: scale(1);
+}
+
+.pets__carousel__item {
+    transition-duration: var(--carouselAnimationTime);
+}
