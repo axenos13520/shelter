@@ -51,6 +51,7 @@ input[type=number] {
 }
 
 .disabled-btn {
+    cursor: alias;
     pointer-events: none;
 }
 
