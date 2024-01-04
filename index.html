@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="./main/main2/style.css">
+    <link rel="stylesheet" href="./main/main2/animateStyle.css">
+</head>
+<body>
+    <main>
+        <div id="blackout" onclick="CloseOpened()"></div>
+        <div class="start-screen">
+            <div id="burger-menu">
+                <ul id="burger-menu__list">
+                    <li><a class="header__tab" tabId="0" href="#about">About the shelter</a></li>
+                    <li><a class="header__tab" tabId="1" href="#pets">Our pets</a></li>
+                    <li><a class="header__tab" tabId="2" href="#help">Help the shelter</a></li>
+                    <li><a class="header__tab" tabId="3" href="#contacts">Contacts</a></li>
+                </ul>
+            </div>
+            <button id="burger-btn" type="button" title="burger" onclick="OnClickBurger()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>                
+            <div class="header">
+                <div class="wrapper">
+                    <div class="header__wrapper">
+                        <img src="./main/main2/src/Logo.svg" alt="Shelter for pets in Boston" class="header__logo">
+                        <ul class="header__list">
+                            <li>
+                                <a class="header__tab" href="#about" tabId="0">About the shelter</a>
+                            </li>
+                            <li>
+                                <a class="header__tab" href="#pets" tabId="1">Our pets</a>
+                            </li>
+                            <li>
+                                <a class="header__tab" href="#help" tabId="2">Help the shelter</a>
+                            </li>
+                            <li>
+                                <a class="header__tab" href="#contacts" tabId="3">Contacts</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="start-screen__content">
+                <div class="wrapper">
+                    <div class="start-screen__content__wrapper">
+                        <div class="start-screen__content__container">
+                            <h2 class="start-screen__content__title">Not only people need a house</h2>
+                            <p class="start-screen__content__subtitle">We offer to give a chance to a little and nice puppy with an extremely wide and open heart. 
+                                He or she will love you more than anybody else in the world, you will see!
+                            </p>
+                            <button type="button" class="start-screen__content__btn">Make a friend</button>
+                        </div>
+                    </div>
+                </div>
+                <img src="./main/main2/src/start-screen-puppy.png" alt="puppy" class="start-screen__puppy">
+            </div>
+        </div>
+
+        <section class="about" id="about">
+            <div class="wrapper">
+                <div class="about__wrapper">
+                    <div class="about__text">
+                        <h3 class="about__title">About the shelter <br>“Cozy House”</h3>
+                        <p class="about__paragraph">Currently we have 121 dogs and 342 cats on our hands and statistics show that only 20% of them will find a family. 
+                            The others will continue to live with us and will be waiting for a lucky chance to become dearly loved.
+                        </p>
+                        <p class="about__paragraph">We feed our wards with the best food and make sure that they do not get sick, feel comfortable (including psychologically) and well. 
+                            We are supported by 87 volunteers and 28 employees of various skill levels. About 12% of the animals are taken by the shelter staff. Taking care of the animals, 
+                            they become attached to the pets and would hardly ever leave them alone.
+                        </p>
+                    </div>
+                    <img src="./main/main2/src/about-pets.png" alt="pets">
+                </div>
+            </div>
+        </section>
+
+        <div class="pets" id="pets">
+            <div class="pet-pop-up" state="0">
+                <button class="pet-pop-up__close" onclick="CloseOpened()"></button>
+                <div class="pet-pop-up__window">
+                    <img src="" alt="" class="pet-pop-up__img">
+                    <div class="pet-pop-up__content">
+                        <h3 class="pet-pop-up__title">Jennifer</h3>
+                        <h4 class="pet-pop-up__subtitle">Dog - Labrador</h4>
+                        <p class="pet-pop-up__description">Jennifer is a sweet 2 months old Labrador that is patiently waiting to find a new forever home. This girl really enjoys being able to go outside to run and play, but won't hesitate to play up a storm in the house if she has all of her favorite toys.</p>
+                        <div class="pet-pop-up__properties">
+                            <div class="pet-pop-up__property-line">
+                                <p class="pet-pop-up__property-name">Age: </p>
+                                <p class="pet-pop-up__property-value" id="age">10 years</p>
+                            </div>
+                            <div class="pet-pop-up__property-line">
+                                <p class="pet-pop-up__property-name">Inoculations: </p>
+                                <p class="pet-pop-up__property-value" id="inoculations">none</p>
+                            </div>
+                            <div class="pet-pop-up__property-line">
+                                <p class="pet-pop-up__property-name">Diseases: </p>
+                                <p class="pet-pop-up__property-value" id="diseases">none</p>
+                            </div>
+                            <div class="pet-pop-up__property-line">
+                                <p class="pet-pop-up__property-name">Parasites: </p>
+                                <p class="pet-pop-up__property-value" id="parasites"w>none</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="wrapper">
+                <div class="pets__wrapper">
+                    <h3 class="pets__title">Our friends who <br> are looking for a house</h3>
+                    <div class="pets__carousel">
+                        <div class="pets__carousel__items"></div>
+                        <div class="pets__carousel__swipe-btns">
+                            <button type="button" class="pets__carousel__swipe-btn" onclick="TrySwipeCarousel(-1)">
+                                <img src="./main/main2/src/left-arrow.svg" alt="left" class="pets__carousel__swipe__img">
+                            </button>
+                            <button type="button" class="pets__carousel__swipe-btn" onclick="TrySwipeCarousel(1)">
+                                <img src="./main/main2/src/right-arrow.svg" alt="right" class="pets__carousel__swipe__img">
+                            </button>
+                        </div>
+                    </div>
+                    <button type="button" class="pets__primary-btn" onclick="TransformPets()">Get to know the rest</button>
+                </div>
+            </div>
+            <div class="pets__wrapper2">
+                <h3 class="pets__title">Our friends who <br> are looking for a house</h3>
+                <div class="pets__carousel__items2"></div>
+                <div class="pets__carousel__swipe-btns2">
+                    <button type="button" class="pets__carousel__swipe-btn gray-btn disabled-btn" onclick="TrySwipeCarousel(-1)">
+                        <p>&lt&lt</p>
+                    </button>
+                    <button type="button" class="pets__carousel__swipe-btn gray-btn disabled-btn" onclick="TrySwipeCarousel(-1)">
+                        <p>&lt</p>
+                    </button>
+                    <button type="button" class="pets__carousel__swipe-btn disabled-btn">
+                        <p>1</p>
+                    </button>
+                    <button type="button" class="pets__carousel__swipe-btn" onclick="TrySwipeCarousel(1)">
+                        <p>&gt</p>
+                    </button>
+                    <button type="button" class="pets__carousel__swipe-btn" onclick="TrySwipeCarousel(1)">
+                        <p>&gt&gt</p>
+                    </button>
+                </div>
+                <button type="button" class="pets__primary-btn" onclick="TransformPets()">Ybrat' lishnee</button>
+            </div>
+        </div>
+
+        <div class="help" id="help">
+            <div class="help__wrapper">
+                <h3 class="help__title">How you can help
+                    our shelter</h3>
+                <div class="help__grid">
+                    <figure class="help__grid__item">
+                        <img src="./main/main2/src/help-img/icon-pet-food.svg" alt="food">
+                        <figcaption class="help__grid__item__caption">Pet food</figcaption>
+                    </figure>
+                    <figure class="help__grid__item">
+                        <img src="./main/main2/src/help-img/icon-transportation.svg" alt="food">
+                        <figcaption class="help__grid__item__caption">Transportation</figcaption>
+                    </figure>
+                    <figure class="help__grid__item">
+                        <img src="./main/main2/src/help-img/toys.svg" alt="food">
+                        <figcaption class="help__grid__item__caption">Toys</figcaption>
+                    </figure>
+                    <figure class="help__grid__item">
+                        <img src="./main/main2/src/help-img/icon-bowls-and-cups.svg" alt="food">
+                        <figcaption class="help__grid__item__caption">Bowls and cups</figcaption>
+                    </figure>
+                    <figure class="help__grid__item">
+                        <img src="./main/main2/src/help-img/icon-shampoos.svg" alt="food">
+                        <figcaption class="help__grid__item__caption">Shampoos</figcaption>
+                    </figure>
+                    <figure class="help__grid__item">
+                        <img src="./main/main2/src/help-img/icon-vitamins.svg" alt="food">
+                        <figcaption class="help__grid__item__caption">Vitamins</figcaption>
+                    </figure>
+                    <figure class="help__grid__item">
+                        <img src="./main/main2/src/help-img/icon-medicines.svg" alt="food">
+                        <figcaption class="help__grid__item__caption">Medicines</figcaption>
+                    </figure>
+                    <figure class="help__grid__item">
+                        <img src="./main/main2/src/help-img/icon-collars-leashes.svg" alt="food">
+                        <figcaption class="help__grid__item__caption">Collars / leashes</figcaption>
+                    </figure>
+                    <figure class="help__grid__item">
+                        <img src="./main/main2/src/help-img/icon-sleeping-area.svg" alt="food">
+                        <figcaption class="help__grid__item__caption">Sleeping areas</figcaption>
+                    </figure>
+                </div>
+                <div class="help__container">
+                    <div class="help__container__grid">
+                        <figure class="help__grid__item">
+                            <img src="./main/main2/src/help-img/icon-pet-food.svg" alt="food">
+                            <figcaption class="help__grid__item__caption">Pet food</figcaption>
+                        </figure>
+                        <figure class="help__grid__item">
+                            <img src="./main/main2/src/help-img/icon-transportation.svg" alt="food">
+                            <figcaption class="help__grid__item__caption">Transportation</figcaption>
+                        </figure>
+                        <figure class="help__grid__item">
+                            <img src="./main/main2/src/help-img/toys.svg" alt="food">
+                            <figcaption class="help__grid__item__caption">Toys</figcaption>
+                        </figure>
+                        <figure class="help__grid__item">
+                            <img src="./main/main2/src/help-img/icon-bowls-and-cups.svg" alt="food">
+                            <figcaption class="help__grid__item__caption">Bowls and cups</figcaption>
+                        </figure>
+                        <figure class="help__grid__item">
+                            <img src="./main/main2/src/help-img/icon-shampoos.svg" alt="food">
+                            <figcaption class="help__grid__item__caption">Shampoos</figcaption>
+                        </figure>
+                    </div>
+                    <div class="help__container__grid">
+                        <figure class="help__grid__item">
+                            <img src="./main/main2/src/help-img/icon-vitamins.svg" alt="food">
+                            <figcaption class="help__grid__item__caption">Vitamins</figcaption>
+                        </figure>
+                        <figure class="help__grid__item">
+                            <img src="./main/main2/src/help-img/icon-medicines.svg" alt="food">
+                            <figcaption class="help__grid__item__caption">Medicines</figcaption>
+                        </figure>
+                        <figure class="help__grid__item">
+                            <img src="./main/main2/src/help-img/icon-collars-leashes.svg" alt="food">
+                            <figcaption class="help__grid__item__caption">Collars / leashes</figcaption>
+                        </figure>
+                        <figure class="help__grid__item">
+                            <img src="./main/main2/src/help-img/icon-sleeping-area.svg" alt="food">
+                            <figcaption class="help__grid__item__caption">Sleeping areas</figcaption>
+                        </figure>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="donation">
+            <div class="wrapper">
+                <div class="donation__wrapper">
+                    <div class="donation__content">
+                        <h3 class="donation__title">You can also make a donation</h3>
+                        <h5 class="donation__subtitle">Name of the bank / Type of bank account</h5>
+                        <div class="donation__credit-card">
+                            <img src="./main/main2/src/credit-card.svg" alt="card" class="donation__credit-card__img">
+                            <input class="donation__credit-card__number" onkeypress='return formats(this,event)' onkeyup="return numberValidation(event)" placeholder="8380 2880 8028 8791 7435">
+                        </div>
+                        <p class="donation__info">Legal information and lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+                            Maecenas a ipsum at libero sagittis dignissim sed ac diam. Praesent ultrices maximus tortor et vulputate. 
+                            Interdum et malesuada fames ac ante ipsum primis in faucibus.
+                        </p>
+                    </div>
+                    <img class="donation-puppy" src="./main/main2/src/donation-dog.png" alt="dog">
+                </div>
+            </div>
+        </div>
+
+        <footer class="outro" id="contacts">
+            <div class="outro__wrapper">
+                <div class="wrapper">
+                    <div class="outro__block">
+                        <h3 class="outro__block__title">For questions and suggestions</h3>
+                        <a href="#email" class="outro__block__info">
+                            <img src="./main/main2/src/icon-email.svg" alt="email">
+                            <h4 class="outro__block__info__text">email@shelter.com</h4>
+                        </a>
+                        <div class="outro__block__info phone">
+                            <img src="./main/main2/src/icon-phone.svg" alt="email">
+                            <h4 class="outro__block__info__text">+13 674 567 75 54</h4>
+                        </div>
+                    </div>
+    
+                    <div class="outro__block second">
+                        <h3 class="outro__block__title">We are waiting for your visit</h3>
+                        <a href="#map" class="outro__block__info-location">
+                            <img src="./main/main2/src/pin.svg" alt="email">
+                            <h4 class="outro__block__info__text location">1 Central Street, Boston (entrance from the store)</h4>
+                        </a>
+                        <a href="#map" class="outro__block__info-location">
+                            <img src="./main/main2/src/pin.svg" alt="email">
+                            <h4 class="outro__block__info__text location">18 South Park, London</h4>
+                        </a>
+                    </div>
+                </div>
+                <img class="outro__puppy" src="./main/main2/src/footer-puppy.png" alt="puppy">
+            </div>
+        </footer>
+    </main> 
+
+    <script src="./main/main2/main.js"></script>
+    <script src="./main/main2/carousel.js"></script>
+</body>
+</html>
